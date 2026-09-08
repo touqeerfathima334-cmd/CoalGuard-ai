@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; }
+body {
+  @apply text-slate-200 antialiased bg-ink-950 bg-radial-fade;
+  background-attachment: fixed;
+}
+
+.card {
+  @apply bg-ink-800/70 backdrop-blur-xl rounded-2xl border border-white/[0.06] shadow-glass;
+}
+.glass-panel {
+  @apply bg-ink-850/80 backdrop-blur-2xl border border-white/[0.06];
+}
+
+.badge { @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-semibold tracking-wide; }
+
+.btn { @apply inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl text-sm font-medium transition-all disabled:opacity-50 disabled:cursor-not-allowed; }
+.btn-primary { @apply btn bg-brand-500 text-white hover:bg-brand-400 shadow-glow; }
+.btn-secondary { @apply btn bg-white/[0.04] text-slate-200 border border-white/10 hover:bg-white/[0.08]; }
+.btn-danger { @apply btn bg-red-500/90 text-white hover:bg-red-500; }
+
+.input {
+  @apply w-full rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2 text-sm text-slate-200 placeholder:text-slate-500
+  focus:outline-none focus:ring-2 focus:ring-brand-500/60 focus:border-transparent;
+}
+.input option { @apply bg-ink-800 text-slate-200; }
+.label { @apply block text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-1.5; }
+
+/* Risk / status pill colors — translucent backgrounds tuned for a dark surface */
+.risk-LOW { @apply bg-emerald-500/15 text-emerald-400; }
+.risk-MEDIUM { @apply bg-amber-500/15 text-amber-400; }
+.risk-HIGH { @apply bg-orange-500/15 text-orange-400; }
+.risk-CRITICAL { @apply bg-red-500/15 text-red-400; }
+
+.dot-LOW { @apply bg-emerald-400; }
+.dot-MEDIUM { @apply bg-amber-400; }
+.dot-HIGH { @apply bg-orange-400; }
+.dot-CRITICAL { @apply bg-red-400; }
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #2e3a5c; border-radius: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+.leaflet-container { background: #0d1220 !important; }
+.leaflet-popup-content-wrapper, .leaflet-popup-tip { background: #151b2c; color: #e2e8f0; }
+.leaflet-popup-content a { color: #82abfa; }
